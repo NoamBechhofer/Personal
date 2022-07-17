@@ -1,0 +1,202 @@
+% TeXResume
+% Noam Bechhofer
+% Text art: https://patorjk.com/software/taag/
+
+
+% \documentclass[8pt]{extarticle}
+\documentclass[10pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage[skip=2pt]{parskip} % set spacing between paragraphs
+\usepackage{titlesec} % control spacing between section headers and other content
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancyhdr} % header and footer control
+
+% Spacing                    lef  bef  aft
+\titlespacing{\section}     {0pt}{5pt}{0pt}
+\titlespacing{\subsection}  {0pt}{4pt}{0pt}
+\titlespacing{\paragraph}   {0pt}{4pt}{3pt}
+\titlespacing{\subparagraph}{5pt}{2pt}{0pt}
+
+\setstretch{0.75}
+\begin{document}
+
+% footer
+\pagestyle{fancy}
+\fancyhf{} % removes headers/footers, specifically page number in this instance
+\renewcommand{\headrulewidth}{0pt} % removes line at top of doc which fancyhdr tries to insert
+\cfoot{Source code for this resume available at}
+
+% \newenvironment{myitemize}
+% { \begin{itemize}
+%     \setlength{\itemsep}{0pt}
+%     \setlength{\parskip}{0pt}
+%     \setlength{\parsep}{0pt}
+%     }
+% { \end{itemize}
+%     }
+
+    %  _   _                                                
+    % | \ | | __ _ _ __ ___   ___  ___ _ __   __ _  ___ ___ 
+    % |  \| |/ _` | '_ ` _ \ / _ \/ __| '_ \ / _` |/ __/ _ \
+    % | |\  | (_| | | | | | |  __/\__ \ |_) | (_| | (_|  __/
+    % |_| \_|\__,_|_| |_| |_|\___||___/ .__/ \__,_|\___\___|
+    %                                 |_|           
+
+\begin{center}
+\begin{Large}
+    Noam E. Bechhofer
+    \\
+    535 W 112th Street Apt. 503 New York, NY
+    \\
+    845.263.4510
+    \quad
+    noam.bechhofer@columbia.edu
+\end{Large}
+\end{center}
+
+    %  _____    _                 _   _             
+    % | ____|__| |_   _  ___ __ _| |_(_) ___  _ __  
+    % |  _| / _` | | | |/ __/ _` | __| |/ _ \| '_ \ 
+    % | |__| (_| | |_| | (_| (_| | |_| | (_) | | | |
+    % |_____\__,_|\__,_|\___\__,_|\__|_|\___/|_| |_|
+                                              
+\section*{Education}
+    \paragraph*{Columbia University, New York, NY} \hfill Expected May 2025
+    \\
+    Pursuing a BA in Computer Science \hfill 3.98 GPA
+
+    \paragraph*{Fairleigh Dickinson University, Teaneck, NJ} \hfill May 2020 – June 2021
+
+    %  ____      _                       _                    
+    % |  _ \ ___| | _____   ____ _ _ __ | |_                  
+    % | |_) / _ \ |/ _ \ \ / / _` | '_ \| __|                 
+    % |  _ <  __/ |  __/\ V / (_| | | | | |_                  
+    % |_|_\_\___|_|\___| \_/ \__,_|_| |_|\__|            _    
+    %  / ___|___  _   _ _ __ ___  _____      _____  _ __| | __
+    % | |   / _ \| | | | '__/ __|/ _ \ \ /\ / / _ \| '__| |/ /
+    % | |__| (_) | |_| | |  \__ \  __/\ V  V / (_) | |  |   < 
+    %  \____\___/ \__,_|_|  |___/\___| \_/\_/ \___/|_|  |_|\_\
+                                                            
+\section*{Relevant Coursework}
+    \paragraph*{Fairleigh Dickinson University}
+    \hfill
+    Computers and Computer Software
+    \hfill
+    Global Information Technology
+
+    \paragraph*{Columbia University}
+    \hfill
+    Emerging Scholars Program Seminar
+    \\
+    Introduction to Computer Science/Programming in Java
+    \hfill
+    Data Structures
+    \hfill
+    Discrete Mathematics
+
+    %  ____  _    _ _ _     
+    % / ___|| | _(_) | |___ 
+    % \___ \| |/ / | | / __|
+    %  ___) |   <| | | \__ \
+    % |____/|_|\_\_|_|_|___/
+                          
+\section*{Skills}
+    \paragraph*{Programming}
+    Java, SQL
+    \paragraph*{Languages}
+    English (native), Hebrew (intermediate)
+
+    %  ____                                                _             
+    % |  _ \ _ __ ___   __ _ _ __ __ _ _ __ ___  _ __ ___ (_)_ __   __ _ 
+    % | |_) | '__/ _ \ / _` | '__/ _` | '_ ` _ \| '_ ` _ \| | '_ \ / _` |
+    % |  __/| | | (_) | (_| | | | (_| | | | | | | | | | | | | | | | (_| |
+    % |_|   |_|  \___/ \__, |_|  \__,_|_| |_| |_|_| |_| |_|_|_| |_|\__, |
+    %                  |___/                                       |___/
+
+\section*{Programming}
+    Nim \hfill November 2021
+    \begin{itemize}
+        \item Wrote a Java command-line Nim game which utilizes mathematical logic to consistently beat humans
+    \end{itemize}
+
+    Video Poker \hfill December 2021
+    \begin{itemize}
+        \item Wrote a Java command-line Video Poker game
+    \end{itemize}
+
+    Rationals \hfill January 2022
+    \begin{itemize}
+        \item Wrote a Java data type to serve as an alternative to floating-point numbers by preserving precision
+    \end{itemize}
+
+    Tic Tac Toe \hfill January 2022
+    \begin{itemize}
+        \item Wrote a Java command-line Tic Tac Toe game with textual graphics
+    \end{itemize}
+
+    Symbol Balancer \hfill March 2022
+    \begin{itemize}
+        \item Wrote a Java tool to ensure symbol balancing in Java code
+    \end{itemize}
+
+    Spell Checker \hfill April 2022
+    \begin{itemize}
+        \item Wrote a Java tool to spellcheck plain-text documents
+    \end{itemize}
+
+    %  _____                      _                     
+    % | ____|_  ___ __   ___ _ __(_) ___ _ __   ___ ___ 
+    % |  _| \ \/ / '_ \ / _ \ '__| |/ _ \ '_ \ / __/ _ \
+    % | |___ >  <| |_) |  __/ |  | |  __/ | | | (_|  __/
+    % |_____/_/\_\ .__/ \___|_|  |_|\___|_| |_|\___\___|
+    %            |_|                                    
+
+\section*{Experience}   
+    \paragraph{SkylerAI, Tel Aviv (Remote Position)} \hfill June 2022 - Present
+    \subparagraph*{Intern}
+    \begin{itemize}
+        \item Working with a team of junior engineers to develop a tool to cluster SMS messages by intent using NLP
+    \end{itemize}
+
+    \paragraph*{Slice n Spice Restaurant, Airmont, NY} \hfill August 2018 – October 2020
+    \subparagraph*{Manager} \hfill April – October 2020
+    \begin{itemize}
+        \item Oversaw customer service
+        \item Managed and settled corporate accounts
+        \item Oversaw store operations
+    \end{itemize}
+    \subparagraph*{Cashier} \hfill Summers 2018 and 2019
+    \begin{itemize}
+        \item Operated Aldelo-based POS system
+        \item Took and fulfilled orders
+    \end{itemize}
+
+    \paragraph*{Hebrew Academy of Cleveland, Cleveland Heights, OH} \hfill  September 2017 - June 2018
+    \subparagraph*{Teacher's Aide}
+    \begin{itemize}
+        \item  Assisted first and fourth grade teachers in education and classroom management
+    \end{itemize}
+    \subparagraph*{Personal Tutor}
+    \begin{itemize}
+        \item Tutored fifth grade boy
+    \end{itemize}
+
+%      _        _   _       _ _   _           
+%     / \   ___| |_(_)_   _(_) |_(_) ___  ___ 
+%    / _ \ / __| __| \ \ / / | __| |/ _ \/ __|
+%   / ___ \ (__| |_| |\ V /| | |_| |  __/\__ \
+%  /_/   \_\___|\__|_| \_/ |_|\__|_|\___||___/
+
+\section*{Activities}
+    \begin{itemize}
+        \item Debate at Columbia Debate Society
+        \item Volunteer at Columbia Food Pantry
+    \end{itemize}
+
+
+\end{document}
