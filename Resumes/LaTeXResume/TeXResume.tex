@@ -3,7 +3,6 @@
 % Text art: https://patorjk.com/software/taag/
 
 
-% \documentclass[8pt]{extarticle}
 \documentclass[10pt]{article}
 \usepackage[a4paper, margin=1in]{geometry}
 \usepackage{setspace}
@@ -14,6 +13,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{url}
 \usepackage{fancyhdr} % header and footer control
 
 % Spacing                    lef  bef  aft
@@ -29,7 +29,7 @@
 \pagestyle{fancy}
 \fancyhf{} % removes headers/footers, specifically page number in this instance
 \renewcommand{\headrulewidth}{0pt} % removes line at top of doc which fancyhdr tries to insert
-\cfoot{Source code for this resume available at}
+% footer populated at end of doc
 
 % \newenvironment{myitemize}
 % { \begin{itemize}
@@ -186,11 +186,11 @@
         \item Tutored fifth grade boy
     \end{itemize}
 
-%      _        _   _       _ _   _           
-%     / \   ___| |_(_)_   _(_) |_(_) ___  ___ 
-%    / _ \ / __| __| \ \ / / | __| |/ _ \/ __|
-%   / ___ \ (__| |_| |\ V /| | |_| |  __/\__ \
-%  /_/   \_\___|\__|_| \_/ |_|\__|_|\___||___/
+    %      _        _   _       _ _   _           
+    %     / \   ___| |_(_)_   _(_) |_(_) ___  ___ 
+    %    / _ \ / __| __| \ \ / / | __| |/ _ \/ __|
+    %   / ___ \ (__| |_| |\ V /| | |_| |  __/\__ \
+    %  /_/   \_\___|\__|_| \_/ |_|\__|_|\___||___/
 
 \section*{Activities}
     \begin{itemize}
@@ -199,4 +199,15 @@
     \end{itemize}
 
 
+    %  _____           _            
+    % |  ___|__   ___ | |_ ___ _ __ 
+    % | |_ / _ \ / _ \| __/ _ \ '__|
+    % |  _| (_) | (_) | ||  __/ |   
+    % |_|  \___/ \___/ \__\___|_|   
+
+    \cfoot{Source code for this resume available at
+    \url{https://github.com/NoamBechhofer/Personal/Resumes/LaTeXResume/TeXResume.tex}}
+
+
 \end{document}
+
