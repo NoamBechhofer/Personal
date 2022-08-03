@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.12)  3 AUG 2022 19:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.12)  3 AUG 2022 19:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,7 +262,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Here is how much of TeX's memory you used:
  4476 strings out of 478024
  67343 string characters out of 5842701
- 384633 words of memory out of 5000000
+ 384634 words of memory out of 5000000
  22886 multiletter control sequences out of 15000+600000
  472374 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
