@@ -1,7 +1,7 @@
 [core]
-    ; linux
-    # editor = /usr/bin/vim
-    ; windows
+	; linux
+	# editor = /usr/bin/vim
+	; windows
 	editor = \"C:\\Windows\\vim.bat\"
 [filter "lfs"]
 	clean = git-lfs clean -- %f
