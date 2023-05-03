@@ -1,0 +1,13 @@
+[core]
+    ; linux
+    # editor = /usr/bin/vim
+    ; windows
+	editor = \"C:\\Windows\\vim.bat\"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = NoamBechhofer
+	email = noam.bechhofer@gmail.com
