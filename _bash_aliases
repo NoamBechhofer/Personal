@@ -1,2 +1,5 @@
 alias gs='git status'
 alias c='cd'
+alias check='valgrind --leak-check=yes'
+alias lal='ls -AlF'
+alias lla='ls -AlF'
