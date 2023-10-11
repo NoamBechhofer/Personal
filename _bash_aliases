@@ -1,6 +1,7 @@
 alias gs='git status'
 alias v='vim'
 alias c='cd'
+alias l='ls'
 alias md='mkdir'
 alias mc='mkcd'
 alias lal='ls -AlF'
