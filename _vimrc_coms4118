@@ -189,4 +189,8 @@ set ttimeoutlen=100 " ...100ms
 
 set autoread        " automatically detect external changes to open file
 
-:set colorcolumn=81,121
+set colorcolumn=81,121
+
+" display all whitespace
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
