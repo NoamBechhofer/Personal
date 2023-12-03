@@ -21,6 +21,10 @@ Plugin 'dense-analysis/ale'
 
 Plugin 'github/copilot.vim'
 
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()
 
 syntax enable
@@ -192,5 +196,5 @@ set autoread        " automatically detect external changes to open file
 set colorcolumn=81,121
 
 " display all whitespace
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-set list
+" set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+" set list
