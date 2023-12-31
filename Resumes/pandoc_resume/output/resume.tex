@@ -1,0 +1,171 @@
+% Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+% Copyright 2014 Mark Szepieniec <http://github.com/mszep>
+% 
+% ConText style for making a resume with pandoc. Inspired by moderncv.
+% 
+% This CSS document is delivered to you under the CC BY-SA 3.0 License.
+% https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+
+\startmode[*mkii]
+  \enableregime[utf-8]  
+  \setupcolors[state=start]
+\stopmode
+
+\setupcolor[hex]
+\definecolor[titlegrey][h=757575]
+\definecolor[sectioncolor][h=397249]
+\definecolor[rulecolor][h=9cb770]
+
+% Enable hyperlinks
+\setupinteraction[state=start, color=sectioncolor]
+
+\setuppapersize [A4][A4]
+\setuplayout    [width=middle, height=middle,
+                 backspace=20mm, cutspace=0mm,
+                 topspace=10mm, bottomspace=20mm,
+                 header=0mm, footer=0mm]
+
+%\setuppagenumbering[location={footer,center}]
+
+\setupbodyfont[11pt, helvetica]
+
+\setupwhitespace[medium]
+
+\setupblackrules[width=31mm, color=rulecolor]
+
+\setuphead[chapter]      [style=\tfd]
+\setuphead[section]      [style=\tfd\bf, color=titlegrey, align=middle]
+\setuphead[subsection]   [style=\tfb\bf, color=sectioncolor, align=right,
+                          before={\leavevmode\blackrule\hspace}]
+\setuphead[subsubsection][style=\bf]
+
+\setuphead[chapter, section, subsection, subsubsection][number=no]
+
+%\setupdescriptions[width=10mm]
+
+\definedescription
+  [description]
+  [headstyle=bold, style=normal,
+   location=hanging, width=18mm, distance=14mm, margin=0cm]
+
+\setupitemize[autointro, packed]    % prevent orphan list intro
+\setupitemize[indentnext=no]
+
+\defineitemgroup[enumerate]
+\setupenumerate[each][fit][itemalign=left,distance=.5em,style={\feature[+][default:tnum]}]
+
+\setupfloat[figure][default={here,nonumber}]
+\setupfloat[table][default={here,nonumber}]
+
+\setuptables[textwidth=max, HL=none]
+\setupxtable[frame=off,option={stretch,width}]
+
+\setupthinrules[width=15em] % width of horizontal rules
+
+\setupdelimitedtext
+  [blockquote]
+  [before={\setupalign[middle]},
+   indentnext=no,
+  ]
+
+
+\starttext
+
+\section[title={Noam Bechhofer},reference={noam-bechhofer}]
+
+\startplacetable[location=none]
+\startxtable
+\startxtablebody[body]
+\startxrow
+\startxcell[align=right] 535 W 112 St \stopxcell
+\startxcell[align=left] noam.bechhofer@columbia.edu \stopxcell
+\stopxrow
+\startxrow
+\startxcell[align=right] New York, NY 10025 \stopxcell
+\startxcell[align=left] linkedin.com/in/noam-bechhofer/ \stopxcell
+\stopxrow
+\startxrow
+\startxcell[align=right] USA \stopxcell
+\startxcell[align=left] github.com/NoamBechhofer \stopxcell
+\stopxrow
+\stopxtablebody
+\startxtablefoot[foot]
+\startxrow
+\startxcell[align=right] (845) 263 - 4510 \stopxcell
+\startxcell[align=left]  \stopxcell
+\stopxrow
+\stopxtablefoot
+\stopxtable
+\stopplacetable
+
+\subsection[title={Education},reference={education}]
+
+\startdescription{2010-2014 (expected)}
+  {\bf PhD, Computer Science}; Awesome University (MyTown)
+
+  {\em Thesis title: Deep Learning Approaches to the Self-Awesomeness
+  Estimation Problem}
+\stopdescription
+
+\startdescription{2007-2010}
+  {\bf BSc, Computer Science and Electrical Engineering}; University of
+  HomeTown (HomeTown)
+
+  {\em Minor: Awesomeology}
+\stopdescription
+
+\subsubsection[title={Columbia University, School of General
+Studies},reference={columbia-university-school-of-general-studies}]
+
+New York, NY - Graduating May 2025\crlf
+Bachelor of Arts - Computer Science (Concentration: Software Systems),
+GPA: 3.77 Relevant Coursework: - Data Structures: Arrays, FIFO/FILO,
+Lists, Queues, Trees, Hashtables, Graphs, and related algorithms -
+Discrete Mathematics: Proof Techniques, Set Theory, Number Theory,
+Combinatorics, Probability, Graphs - Fundamentals of Computer Systems:
+Boolean Algebra, Circuit Design, State Machines, Assembly Programming,
+CPU Design - Advanced Programming: Systems Programming, C, TCP/IP
+Networking, HTTP Server, Concurrency, UNIX - Operating Systems:
+Scheduling, Memory Management, File Systems, Extensive Team-based Linux
+Kernel hacking - Design Using C++: Taught by Bjarne Stroustrup. System
+Design, Best Practices, Modern C++
+
+\subsubsection[title={University of
+Auckland},reference={university-of-auckland}]
+
+Auckland, New Zealand - Feb 2023 - June 2023 Certificate of Proficiency
+- Study Abroad Relevant Coursework: - Object Oriented Software
+Development: UML Modelling, SOLID, Common Object-Oriented Design
+Patterns, Java GUI - Mathematical Foundations of Computer Science:
+Finite Automata, Turing Machines, Computability, Complexity
+
+\#\# Skills \#\#\# Programming C, Rust, C++, Java, JavaScript,
+TypeScript, Python \#\#\# Software Git \#\#\# Soft Skills AGILE,
+Pragmatic Programming, Systems Programming, Teamwork \#\#\# Language
+English (native), Hebrew (conversational)
+
+\#\# Experience \#\#\# Teaching Assistant Columbia University, New York,
+NY, Sep 2022 - Present - Assist in teaching a 500+ student Introduction
+to Computer Science course taught in Java - Hold office hours to assist
+students with coursework, programming and problem solving - Monitor and
+provide assistance on course discussion board - Grade programming and
+written assignments
+
+\subsubsection[title={Backend Developer},reference={backend-developer}]
+
+WDCC - Web Development & Consulting Club, Auckland, New Zealand, Apr
+2023 -- Aug 2023 - Contributed to back end for a student club event
+registration system - Integrated Stripe Checkout API - Developed
+internal HTTP API between frontend and backend
+
+\#\#\# Intern SkylerAI, Tel Aviv, Israel (remote), Jun 2022 - Aug 2022 -
+Developed a tool to cluster SMS messages by intent - Implemented model
+for recognizing trends in conversation using NLP software
+
+\#\# Activities \#\#\# External Manager Beit Ephraim Housing Co-op,
+2022-23 - Participated in House executive board, voting on policies and
+regulations for residents - Liaison to landlord (Columbia University
+Residential office) - Facilitated move-ins, move-outs, and transfers -
+Communicated with Columbia Facilities for repairs and upkeep
+
+\stoptext
