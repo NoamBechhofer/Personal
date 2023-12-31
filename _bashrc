@@ -132,6 +132,7 @@ fi
 umask 077
 export EDITOR=vim
 
+# my favorite things I would like to do if I am running in Windows
 if [[ "$OSTYPE" == "msys" ]]; then # msys is git bash
     # enable git bash to automatically pull the path from windows
     pathAliasDir="$(pwd)"
@@ -146,6 +147,15 @@ if [[ "$OSTYPE" == "msys" ]]; then # msys is git bash
     else
         echo "pulled \$PATH from %PATH%"
     fi
+
+    # use vim from windows
+    export EDITOR=\"C:\\Windows\\vim.bat\"
+    git config --global core.editor $EDITOR
+else # not windows, so assume UNIX
+    # use vim from unix
+    export EDITOR=/usr/bin/vim
+    git config --global core.editor $EDITOR
+fi
 fi
 
 mkcd() {
