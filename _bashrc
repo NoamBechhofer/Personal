@@ -70,12 +70,11 @@ if [ "$color_prompt" = yes ]; then
     `:`
     `\[\033[01;34m\]\w\[\033[01;33m\]`
     `\n$(echo "$(parse_git_branch) " | sed -e 's/^[[:space:]]*//')\[\033[00m\]` #sed trims the leading whitespace
-    `$(date "+%Y-%m-%d %H:%M:%S %Z") ($(date -u "+%H:%M:%S") Z)`
-    `\n`
-    `\$ '
+    `$(date "+%Y-%m-%d %H:%M:%S %Z") ($(date -u "+%H:%M:%S") Z)'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)'
 fi
+PS1="$PS1\n\[\033[01;35m\]OS: $(uname -o)\[\033[00m\] \$ "
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
