@@ -5,7 +5,15 @@
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;
-*) return ;;
+*)
+    if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+        # Script is sourced, use return
+        return
+    else
+        # Script is executed, use exit
+        exit
+    fi
+    ;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -40,9 +48,7 @@ case "$TERM" in
 xterm-color | *-256color) color_prompt=yes ;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
+# uncomment for a colored prompt, if the terminal has the capability
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
@@ -57,24 +63,34 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 parse_git_branch() {
-    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/' | sed -e 's/^[[:space:]]*//'
 }
 
 if [ "$color_prompt" = yes ]; then
-    export VIRTUAL_ENV_DISABLE_PROMPT=1 # tell python not to prepend venv names to PS1, since we'll handle that ourselves
+    # tell python not to prepend venv names to PS1, since we'll handle that ourselves...
+    export VIRTUAL_ENV_DISABLE_PROMPT=1
+    # ... and then do it ourselves
     PS1='$(if [[ -n "${VIRTUAL_ENV}" ]]; then `
     `echo "\[\033[01;31m\]$(basename $VIRTUAL_ENV) \[\033[00m\]"; \
     fi)`
     `${debian_chroot:+($debian_chroot)}`
+    # basic u@h:w
     `\[\033[01;32m\]\u@\h\[\033[00m\]`
     `:`
-    `\[\033[01;34m\]\w\[\033[01;33m\]`
-    `\n$(echo "$(parse_git_branch) " | sed -e 's/^[[:space:]]*//')\[\033[00m\]` #sed trims the leading whitespace
-    `$(date "+%Y-%m-%d %H:%M:%S %Z") ($(date -u "+%H:%M:%S") Z)'
+    `\[\033[01;34m\]\w\[\033[00m\]`
+    # list the operating system
+    `\[\033[01;35m\] $(uname -o) \[\033[00m\]`
+    `\n`
+    # git branch
+    `\[\033[01;33m\]$(echo "$(parse_git_branch) ") \[\033[00m\]`
+    # date, local and UTC
+    `$(date +%Y-%m-%d\ %H:%M:%S\ %Z) ($(date -u +%H:%M:%S) Z)\[\033[00m\]'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)'
+    # basic u@h:w + git branch
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(uname -o) $(parse_git_branch)'
 fi
-PS1="$PS1\n\[\033[01;35m\]OS: $(uname -o)\[\033[00m\] \$ "
+# add the dollar sign prompt
+PS1+="\$ "
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -148,14 +164,12 @@ if [[ "$OSTYPE" == "msys" ]]; then # msys is git bash
     fi
 
     # use vim from windows
-    export EDITOR=\"C:\\Windows\\vim.bat\"
-    git config --global core.editor $EDITOR
+    export EDITOR="/c/Windows/vim.bat"
 else # not windows, so assume UNIX
     # use vim from unix
     export EDITOR=/usr/bin/vim
-    git config --global core.editor $EDITOR
 fi
-fi
+git config --global core.editor $EDITOR
 
 mkcd() {
     mkdir "$1"
