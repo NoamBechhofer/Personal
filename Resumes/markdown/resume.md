@@ -11,34 +11,21 @@ USA                             github.com/NoamBechhofer
 Education
 ---------
 
-2010-2014 (expected)
-:   **PhD, Computer Science**; Awesome University (MyTown)
+Sep 2021-May 2025 (expected)
+:   **BA, Computer Science (Concentration: Software Systems), GPA: 3.77**; Columbia University (New York, NY, USA)  
+    Relevant Coursework:  
+    - Data Structures: Arrays, FIFO/FILO, Lists, Queues, Trees, Hashtables, Graphs, and related algorithms  
+    - Discrete Mathematics: Proof Techniques, Set Theory, Number Theory, Combinatorics, Probability, Graphs  
+    - Fundamentals of Computer Systems:  Boolean Algebra, Circuit Design, State Machines, Assembly Programming, CPU Design  
+    - Advanced Programming: Systems Programming, C, TCP/IP Networking, HTTP Server, Concurrency, UNIX  
+    - Operating Systems: Scheduling, Memory Management, File Systems, Extensive Team-based Linux Kernel hacking  
+    - Design Using C++: Taught by Bjarne Stroustrup. System Design, Best Practices, Modern C++
 
-    *Thesis title: Deep Learning Approaches to the Self-Awesomeness Estimation Problem*
-
-2007-2010
-:   **BSc, Computer Science and Electrical Engineering**; University of
-    HomeTown (HomeTown)
-
-    *Minor: Awesomeology*
-    
-### Columbia University, School of General Studies
-New York, NY - Graduating May 2025  
-Bachelor of Arts - Computer Science (Concentration: Software Systems), GPA: 3.77
-Relevant Coursework:
- - Data Structures: Arrays, FIFO/FILO, Lists, Queues, Trees, Hashtables, Graphs, and related algorithms
- - Discrete Mathematics: Proof Techniques, Set Theory, Number Theory, Combinatorics, Probability, Graphs
- - Fundamentals of Computer Systems:  Boolean Algebra, Circuit Design, State Machines, Assembly Programming, CPU Design
- - Advanced Programming: Systems Programming, C, TCP/IP Networking, HTTP Server, Concurrency, UNIX
- - Operating Systems: Scheduling, Memory Management, File Systems, Extensive Team-based Linux Kernel hacking
- - Design Using C++: Taught by Bjarne Stroustrup. System Design, Best Practices, Modern C++
-
-### University of Auckland
-Auckland, New Zealand - Feb 2023 - June 2023
-Certificate of Proficiency - Study Abroad
-Relevant Coursework:
- - Object Oriented Software Development: UML Modelling, SOLID, Common Object-Oriented Design Patterns, Java GUI
- - Mathematical Foundations of Computer Science: Finite Automata, Turing Machines, Computability, Complexity
+Feb 2023-Jun 2023
+:   **Certificate of Proficiency - Study Abroad**; University of Auckland (Auckland, New Zealand)  
+    Relevant Coursework:  
+    - Object Oriented Software Development: UML Modelling, SOLID, Common Object-Oriented Design Patterns, Java GUI  
+    - Mathematical Foundations of Computer Science: Finite Automata, Turing Machines, Computability, Complexity
 
  ## Skills
  ### Programming
