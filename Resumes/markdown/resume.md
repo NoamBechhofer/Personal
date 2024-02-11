@@ -39,11 +39,11 @@ Feb 2023-Jun 2023
 
  ## Experience
  ### Teaching Assistant
- Columbia University, New York, NY, Sep 2022 - Present
-  - Assist in teaching a 500+ student Introduction to Computer Science course taught in Java
-  - Hold office hours to assist students with coursework, programming and problem solving
-  - Monitor and provide assistance on course discussion board
-  - Grade programming and written assignments
+ Columbia University, New York, NY, Sep 2022 - Jan 2023
+  - Assisted in teaching a 500+ student Introduction to Computer Science course taught in Java
+  - Held office hours to assist students with coursework, programming and problem solving
+  - Monitored and provide assistance on course discussion board
+  - Graded programming and written assignments
 
 ### Backend Developer
 WDCC - Web Development & Consulting Club, Auckland, New Zealand, Apr 2023 – Aug 2023
