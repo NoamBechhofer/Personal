@@ -1,6 +1,11 @@
 " vundle plugin manager
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+" Setting up vundle:
+" 1. execute `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+" 2. launch vim and run `:PluginInstall`
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
