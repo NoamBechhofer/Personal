@@ -38,6 +38,11 @@ Feb 2023-Jun 2023
  English (native), Hebrew (conversational)
 
  ## Experience
+
+### Research Assistant
+Software Systems Laboratory, Columbia University, New York, NY, Sep 2023 - Present
+- Generalizing Arm Confidential Compute Architecture to protect confidential containers, providing finer-grain data protection, better performance, and smaller trusted computing base over confidential virtual machines
+
  ### Teaching Assistant
  Columbia University, New York, NY, Sep 2022 - Jan 2023
   - Assisted in teaching a 500+ student Introduction to Computer Science course taught in Java
