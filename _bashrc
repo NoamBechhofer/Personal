@@ -177,3 +177,9 @@ mkcd() {
 }
 
 unset color_prompt force_color_prompt
+
+# option for adding local bash configs:
+# write a file ~/.bashrc.local and add your local configs there
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi
