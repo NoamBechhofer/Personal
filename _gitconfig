@@ -12,3 +12,5 @@
 	editcommit = commit --amend
 	ls = log --graph
         adog = log --all --decorate --oneline --graph
+[init]
+	defaultBranch = main
