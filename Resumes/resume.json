@@ -1,0 +1,209 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Noam Bechhofer",
+    "label": "Student",
+    "image": "https://lh3.googleusercontent.com/pw/AP1GczPHyC3VNzvvz6OTo-UDmbUQvL4u7wK1n3-LnJubxxVDpLCLE8AR1SZUVHnHQyzdjZce7AhYMQOdhc4xpuRHdIhiT0xvix2LxhMLCJs5__DQ1j2J_osgCahwAZWwWPwui9EGR_-Qw88bh1GWNcGJ-qG5dQ=w685-h914-s-no?authuser=0",
+    "email": "noam.bechhofer@columbia.edu",
+    "phone": "(845) 263-4510",
+    "url": "https://www.linkedin.com/in/noam-bechhofer/",
+    "summary": "Computer Science undergraduate with a passion for software engineering. Quick learner and great debugger. I am looking for an interesting position where I can grow and learn.",
+    "location": {
+      "address": "535 W 112 St",
+      "postalCode": "10952",
+      "city": "New York",
+      "countryCode": "US",
+      "region": "New York"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "noam-bechhofer",
+        "url": "https://www.linkedin.com/in/noam-bechhofer/"
+      },
+      {
+        "network": "GitHub",
+        "username": "noambechhofer",
+        "url": "https://www.github.com/NoamBechhofer"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Columbia University Software Systems Laboratory",
+      "location": "New York, NY",
+      "description": "University",
+      "position": "Research Assistant",
+      "url": "https://systems.cs.columbia.edu/",
+      "startDate": "2024-01-01",
+      "summary": "Generalizing Arm Confidential Compute Architecture to protect confidential containers, providing finer-grain data protection, better performance, and smaller trusted computing base over confidential virtual machines",
+      "highlights": [
+        "Worked on team of 3 students",
+        "Devloped in C",
+        "Implemented system calls for a modified host linux to handle writing to containers running encrypted file systems"
+      ]
+    },
+    {
+      "name": "Columbia University",
+      "location": "New York, NY",
+      "description": "University",
+      "position": "Teaching Assistant",
+      "url": "https://www.columbia.edu/",
+      "startDate": "2022-09-01",
+      "endDate": "2024-01-01",
+      "summary": "Assisted with teaching a 500+ student Introduction to Computer Science course taught in Java",
+      "highlights": [
+        "Held office hours to assist students with coursework, programming and problem solving",
+        "Monitored and provide assistance on course discussion board",
+        "Graded programming and written assignments",
+        "Assisted students in debugging spaghetti code"
+      ]
+    },
+    {
+      "name": "Web Development & Consulting Club",
+      "location": "Auckland, NZ",
+      "description": "Student Club",
+      "position": "Backend Web Developer",
+      "url": "https://wdcc.co.nz/",
+      "startDate": "2023-04-01",
+      "endDate": "2023-08-01",
+      "summary": "Developed backend for a student club event registration website",
+      "highlights": [
+        "Developed in Node.js",
+        "Used Express and MongoDB",
+        "Integrated Stripe Checkout API",
+        "Developed REST API for frontend to interact with"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Columbia University",
+      "url": "https://www.columbia.edu/",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2021-09-01",
+      "endDate": "2025-05-01",
+      "score": "3.76/4.0",
+      "courses": [
+        "Intro to Computer Science/Programming in Java: CS fundamentals, basic programming",
+        "Data Structures: Arrays, Collections, Hashtables, Related Algorithms",
+        "Discrete Mathematics: Proof Techniques, Discrete Structures",
+        "Fundamentals of Computer Systems: Circuit/Processor Design, Assembly Programming",
+        "Advanced Programming: Systems Programming, TCP/IP, HTTP",
+        "Operating Systems: Extensive Team-based Linux Kernel hacking",
+        "Design Using C++: Taught by Bjarne Stroustrup. System Design, Best Practices, Modern C++",
+        "Full Stack Web Development: React, Express, MongoDB, Cloud Deployment",
+        "Databases: PostgreSQL, Best Practices"
+      ]
+    },
+    {
+      "institution": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/",
+      "area": "Computer Science",
+      "studyType": "Study Abroad",
+      "startDate": "2023-02-01",
+      "endDate": "2023-06-01",
+      "courses": [
+        "Object Oriented Software Development: UML Modelling, SOLID, Design Patterns",
+        "Mathematical Foundations of Computer Science: Automata, Computability, Complexity"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Dean's List",
+      "date": "2021-01-01",
+      "awarder": "Columbia University School of General Studies"
+    },
+    {
+      "title": "Dean's List",
+      "date": "2022-05-01",
+      "awarder": "Columbia University School of General Studies"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Proficient",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Typescript",
+        "React",
+        "Next.js",
+        "Express",
+        "PostgreSQL",
+        "MongoDB"
+      ]
+    },
+    {
+      "name": "Systems Programming",
+      "level": "Proficient",
+      "keywords": [
+        "C",
+        "Linux",
+        "Kernel Hacking"
+      ]
+    },
+    {
+      "name": "Programming",
+      "level": "Advanced",
+      "keywords": [
+        "Java",
+        "C",
+        "C++",
+        "Python",
+        "Javascript",
+        "Typescript",
+        "Rust"
+      ]
+    },
+    {
+      "name": "git",
+      "level": "Master",
+      "keywords": [
+        "git",
+        "GitHub",
+        "merge",
+        "rebase",
+        "cherry-pick",
+        "pull request"
+      ]
+    },
+    {
+      "name": "Code Documentation",
+      "level": "Master",
+      "keywords": [
+        "Javadoc",
+        "Doxygen",
+        "docstrings",
+        "Markdown"
+      ]
+    },
+    {
+      "name": "Debugging",
+      "level": "Master",
+      "keywords": [
+        "printf",
+        "stack trace"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Hebrew",
+      "fluency": "Intermediate"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2024-04-16T21:45:00Z"
+  }
+}
