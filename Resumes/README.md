@@ -1,0 +1,1 @@
+Use the [`resumed`](https://www.npmjs.com/package/resumed) package to generate the HTML from the JSON
