@@ -71,7 +71,7 @@ if [ "$color_prompt" = yes ]; then
     export VIRTUAL_ENV_DISABLE_PROMPT=1
     # ... and then do it ourselves
     PS1='$(if [[ -n "${VIRTUAL_ENV}" ]]; then `
-    `echo "\[\033[01;31m\]$(basename $VIRTUAL_ENV) \[\033[00m\]"; \
+    `echo "\[\033[01;31m\]$(basename "$(echo "$VIRTUAL_ENV")") \[\033[00m\]"; \
     fi)`
     `${debian_chroot:+($debian_chroot)}`
     # basic u@h:w
@@ -175,6 +175,14 @@ mkcd() {
 }
 
 unset color_prompt force_color_prompt
+
+c () {
+	command pushd "$@" > /dev/null
+}
+
+p () {
+	command popd "$@" > /dev/null
+}
 
 # option for adding local bash configs:
 # write a file ~/.bashrc_local and add your local configs there
