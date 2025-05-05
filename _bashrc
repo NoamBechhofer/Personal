@@ -176,12 +176,12 @@ mkcd() {
 
 unset color_prompt force_color_prompt
 
-c () {
-	command pushd "$@" > /dev/null
+c() {
+    command pushd "$@" >/dev/null
 }
 
-p () {
-	command popd "$@" > /dev/null
+p() {
+    command popd "$@" >/dev/null
 }
 
 # option for adding local bash configs:
