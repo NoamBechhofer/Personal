@@ -146,6 +146,114 @@ if [[ "$OSTYPE" == "msys" ]]; then # msys is git bash
     # enable git bash to automatically pull the path from windows
     pathAliasDir="$(pwd)"
     cd ~
+    [ -f ./UpdatePath.sh ] || {
+      cat <<'EOF' > ./UpdatePath.sh
+#!/bin/bash
+updatePathWorkingDir=$(pwd)
+cd $HOME
+
+# This script updates the git bash $PATH to match the user's %PATH%
+# First, add the following line to your .bashrc:
+# alias path='pathAliasDir=$(pwd) && cd ~ && ./UpdatePath.sh && export PATH=`cat PATH` && rm PATH && cd $pathAliasDir && unset pathAliasDir && alias path="echo \"can only update path once per bash session\""'
+# Now you can always call this script by just using the command "path"
+
+# It's hard to get %PATH% from within git bash. Let's call this powershell script which does it for us.
+# first make sure the script exists
+if ! [ -f $HOME/GetWindowsPath.ps1 ]; then
+    cat <<-'PS1' >$HOME/GetWindowsPath.ps1
+# split the path into an array of seperate filepaths
+$currPath = $env:path -split ';'
+
+# bashify each filepath
+for (($i = 0); $i -lt $currPath.Length; $i++) {
+    if ($currPath[$i].EndsWith("\")) {
+        $currPath[$i] = $currPath[$i].Substring(0, $currPath[$i].Length - 1)
+    }
+
+    $currPath[$i] = (($currPath[$i] -replace '\\', '/') -replace 'C:', '/c') + ":"
+}
+
+# now we'll write the array to a file
+$pathFilePath = $HOME + "\WINPATH"
+Set-Content -Path $pathFilePath -value $currPath
+PS1
+fi
+# ok if it didn't exist, it exists now. Let's execute it with powershell
+powershell -ExecutionPolicy Bypass -File $HOME/GetWindowsPath.ps1
+
+# now we need the bash path. Again, split it such that each filepath is on its own line and write it to a file.
+echo $PATH | sed 's#/:#:#g' | sed 's#:#:\n#g' >$HOME/BASHPATH
+
+# Ok, now in our $HOME directory we have a WINPATH and a BASHPATH file.
+# In both of these, each filepath is on its own line.
+# So we need to merge these two lists.
+# We'll use this Java program to do it:
+# again, first we make sure the java program exists. If not, we'll write it and compile it
+if ! [ -f $HOME/UpdatePath.class ]; then
+    cat <<-'JAVA' >$HOME/UpdatePath.java
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class UpdatePath {
+    public static void main(String[] args) throws FileNotFoundException {
+
+        String homeDir = System.getProperty("user.home");
+
+        File winPath = new File(homeDir + "\\WINPATH");
+        File bashPath = new File(homeDir + "\\BASHPATH");
+
+        HashSet<String> hash = new HashSet<>();
+
+        Scanner bashScanner = new Scanner(bashPath);
+        while (bashScanner.hasNextLine())
+            hash.add(bashScanner.nextLine());
+
+        bashScanner.close();
+
+        Scanner winScanner = new Scanner(winPath);
+        while (winScanner.hasNextLine())
+            hash.add(winScanner.nextLine());
+
+        winScanner.close();
+
+        String PATH = "";
+        for (String s : hash)
+            PATH += s;
+
+        System.out.println(PATH);
+    }
+}
+JAVA
+    javac UpdatePath.java
+    rm UpdatePath.java
+fi
+# ok now run the program
+java UpdatePath >$HOME/PATH
+
+# ok these files are no longer necessary, delete them
+rm $HOME/WINPATH $HOME/BASHPATH
+
+# done! the alias'd `path` command will delete the remaining $HOME/PATH once it's finished with it
+
+cd $updatePathWorkingDir
+
+# bonus: break down of the `path' alias
+# The full alias reads:
+# alias path='
+#   pathAliasDir=$(pwd) &&                                              ## save the directory we're at so we can return to it
+#   cd ~ &&                                                             ## move to the home directory
+#   ./UpdatePath.sh &&                                                  ## run the script
+#   export PATH=`cat PATH` &&                                           ## set the $PATH to the PATH file that the script generated
+#   rm PATH &&                                                          ## Ok since it's set we can delete the file
+#   cd $pathAliasDir &&                                                 ## Ok we're done so return to the directory we started at...
+#   unset pathAliasDir &&                                               ## and we don't have to keep track of the directory anymore
+#   alias path="echo \"can only update path once per bash session\""    ## now we need to make sure the alias isn't called again as that may cause bugs, so we redefine the alias
+# '
+EOF
+      chmod +x ./UpdatePath.sh
+    }
     ./UpdatePath.sh
     export PATH=$(cat PATH)
     rm PATH
