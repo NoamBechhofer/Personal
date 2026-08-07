@@ -119,6 +119,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
+    # shellcheck source=/dev/null
     . ~/.bash_aliases
 fi
 
@@ -136,11 +137,8 @@ fi
 umask 077
 export EDITOR=vim
 
-# my favorite things I would like to do if I am running in Windows
-if [[ "$OSTYPE" == "msys" ]]; then # msys is git bash
-    # enable git bash to automatically pull the path from windows
-    pathAliasDir="$(pwd)"
-    cd ~
+setUpPathPull() {
+    pushd ~ || return
     [ -f ./UpdatePath.sh ] || {
       cat <<'EOF' > ./UpdatePath.sh
 #!/bin/bash
@@ -250,9 +248,10 @@ EOF
       chmod +x ./UpdatePath.sh
     }
     ./UpdatePath.sh
-    export PATH=$(cat PATH)
+    PATH=$(cat PATH)
+    export PATH 
     rm PATH
-    cd "$pathAliasDir"
+    popd || return
     unset pathAliasDir
     if [ "$color_prompt" = yes ]; then
         echo -e "\033[01;34mpulled \$PATH from %PATH%\033[01;33m"
@@ -260,6 +259,12 @@ EOF
         echo "pulled \$PATH from %PATH%"
     fi
 
+}
+
+# my favorite things I would like to do if I am running in Windows
+if [[ "$OSTYPE" == "msys" ]]; then # msys is git bash
+    # enable git bash to automatically pull the path from windows
+    setUpPathPull
     # use vim from windows
     export EDITOR="/c/Windows/vim.bat"
 else # not windows, so assume UNIX
@@ -270,21 +275,22 @@ git config --global core.editor $EDITOR
 
 mkcd() {
     mkdir "$1"
-    cd "$1"
+    cd "$1" || return 1
 }
 
 unset color_prompt force_color_prompt
 
 c() {
-    command pushd "$@" >/dev/null
+    command pushd "$@" >/dev/null || return 1
 }
 
 p() {
-    command popd "$@" >/dev/null
+    command popd "$@" >/dev/null || return 1
 }
 
 # option for adding local bash configs:
 # write a file ~/.bashrc_local and add your local configs there
 if [ -f ~/.bashrc_local ]; then
+    # shellcheck source=/dev/null
     . ~/.bashrc_local
 fi
